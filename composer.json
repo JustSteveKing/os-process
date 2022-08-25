@@ -22,7 +22,8 @@
     },
     "require": {
         "php": "^8.1",
-        "illuminate/contracts": "^9.25"
+        "illuminate/contracts": "^9.25",
+        "symfony/process": "^6.1"
     },
     "require-dev": {
         "laravel/pint": "^1.1",
@@ -33,7 +34,7 @@
     "scripts": {
         "test": "./vendor/bin/pest",
         "pint": "./vendor/bin/pint",
-        "stan": "./vendor/bin/phpstan analyse --error-format=github"
+        "stan": "./vendor/bin/phpstan analyse"
     },
     "scripts-description": {
         "test": "Run the Pest test suite.",
@@ -43,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "JustSteveKing\\Laravel\\OS\\Providers\\SendStackServiceProvider"
+                "JustSteveKing\\Laravel\\OS\\Providers\\OSProcessServiceProvider"
             ]
         }
     },
