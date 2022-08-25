@@ -13,7 +13,6 @@ it('can execute a git command', function () {
                 ->toBeString()
                 ->toContain(
                     'On branch main',
-                    'Changes to be committed:',
                 );
         },
     );
