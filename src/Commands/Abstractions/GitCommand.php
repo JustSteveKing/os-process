@@ -4,34 +4,43 @@ declare(strict_types=1);
 
 namespace JustSteveKing\Laravel\OS\Commands\Abstractions;
 
+use InvalidArgumentException;
 use JustSteveKing\Laravel\OS\Commands\Types\Git as SubCommand;
 use JustSteveKing\Laravel\OS\Contracts\CommandContract;
 use Symfony\Component\Process\ExecutableFinder;
 use Throwable;
 
+/**
+ * @property-read SubCommand $type
+ * @property-read array $args
+ * @property-read null|string $executable
+ */
 final class GitCommand implements CommandContract
 {
     /**
      * @param SubCommand $type
      * @param array $args
+     * @param null|string $executable
      */
     public function __construct(
-        private readonly SubCommand $type,
-        private readonly array $args = [],
+        public readonly SubCommand $type,
+        public readonly array $args = [],
+        public readonly null|string $executable = null,
     ) {}
 
     /**
      * @return array
-     * @throws Throwable
      */
     public function toArgs(): array
     {
-        try {
-            $executable = (new ExecutableFinder())->find(
-                name: 'git',
+        $executable = (new ExecutableFinder())->find(
+            name: $this->executable ?? 'git',
+        );
+
+        if (null === $executable) {
+            throw new InvalidArgumentException(
+                message: "Cannot find executable for [$this->executable].",
             );
-        } catch (Throwable $exception) {
-            throw $exception;
         }
 
         return array_merge(

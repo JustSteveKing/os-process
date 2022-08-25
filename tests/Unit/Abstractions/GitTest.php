@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use JustSteveKing\Laravel\OS\Commands\Abstractions\Git;
+use JustSteveKing\Laravel\OS\Commands\Abstractions\GitCommand;
+use JustSteveKing\Laravel\OS\Commands\Types\Git as SubCommand;
 
 it('can build a git push command', function (string $branch) {
     $git = new Git();
@@ -15,3 +17,13 @@ it('can build a git push command', function (string $branch) {
         $command->getCommandLine(),
     )->toBeString()->toContain('push', 'origin', $branch);
 })->with('branches');
+
+it('it throws an exception if the executable cannot be found', function () {
+    $command = new GitCommand(
+        type: SubCommand::ADD,
+        args: [],
+        executable: 'abcdefu',
+    );
+
+    $command->toArgs();
+})->throws(InvalidArgumentException::class);
