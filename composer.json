@@ -1,0 +1,60 @@
+{
+    "name": "juststeveking/laravel-os-process",
+    "description": "A Laravel Package to work with OS processes",
+    "license": "MIT",
+    "authors": [
+        {
+            "role": "Developer",
+            "name": "Steve McDougall",
+            "email": "juststevemcd@gmail.com",
+            "homepage": "https://www.juststeveking.uk/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JustSteveKing\\Laravel\\OS\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JustSteveKing\\Laravel\\OS\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^9.25"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.1",
+        "nunomaduro/larastan": "^2.1",
+        "orchestra/testbench": "^7.6",
+        "pestphp/pest": "^1.21"
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest",
+        "pint": "./vendor/bin/pint",
+        "stan": "./vendor/bin/phpstan analyse --error-format=github"
+    },
+    "scripts-description": {
+        "test": "Run the Pest test suite.",
+        "pint": "Run Laravel Pint to fix any code style issues.",
+        "stan": "Run PHPStan static analysis on the code base."
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JustSteveKing\\Laravel\\OS\\Providers\\SendStackServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

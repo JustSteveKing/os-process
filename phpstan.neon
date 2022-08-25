@@ -1,0 +1,14 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    paths:
+        - src
+
+    level: 9
+
+    ignoreErrors:
+        - '#Parameter \$callback of function array_map expects#'
+
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
