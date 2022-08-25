@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JustSteveKing\Laravel\OS\Contracts;
+namespace JustSteveKing\OS\Contracts;
 
 use Symfony\Component\Process\Process;
 

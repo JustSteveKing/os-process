@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JustSteveKing\Laravel\OS\Commands\Abstractions;
+namespace JustSteveKing\OS\Commands\Abstractions;
 
 use InvalidArgumentException;
-use JustSteveKing\Laravel\OS\Commands\Types\Git as SubCommand;
-use JustSteveKing\Laravel\OS\Contracts\CommandContract;
+use JustSteveKing\OS\Commands\Types\Git as SubCommand;
+use JustSteveKing\OS\Contracts\CommandContract;
 use Symfony\Component\Process\ExecutableFinder;
-use Throwable;
 
 /**
  * @property-read SubCommand $type
@@ -26,7 +25,8 @@ final class GitCommand implements CommandContract
         public readonly SubCommand $type,
         public readonly array $args = [],
         public readonly null|string $executable = null,
-    ) {}
+    ) {
+    }
 
     /**
      * @return array

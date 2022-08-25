@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JustSteveKing\Laravel\OS\Commands\Abstractions;
+namespace JustSteveKing\OS\Commands\Abstractions;
 
-use JustSteveKing\Laravel\OS\Commands\Types\Git as SubCommand;
-use JustSteveKing\Laravel\OS\Concerns\HandlesGitCommands;
-use JustSteveKing\Laravel\OS\Contracts\CommandContract;
-use JustSteveKing\Laravel\OS\Contracts\ProcessContract;
+use JustSteveKing\OS\Commands\Types\Git as SubCommand;
+use JustSteveKing\OS\Concerns\HandlesGitCommands;
+use JustSteveKing\OS\Contracts\CommandContract;
+use JustSteveKing\OS\Contracts\ProcessContract;
 use Symfony\Component\Process\Process;
 
 final class Git implements ProcessContract

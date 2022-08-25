@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JustSteveKing\Laravel\OS\Concerns;
+namespace JustSteveKing\OS\Concerns;
 
-use JustSteveKing\Laravel\OS\Commands\Abstractions\GitCommand;
-use JustSteveKing\Laravel\OS\Commands\Types\Git;
-use JustSteveKing\Laravel\OS\Contracts\ProcessContract;
+use JustSteveKing\OS\Commands\Abstractions\GitCommand;
+use JustSteveKing\OS\Commands\Types\Git;
+use JustSteveKing\OS\Contracts\ProcessContract;
 use Symfony\Component\Process\Process;
 
 /**

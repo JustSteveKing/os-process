@@ -1,3 +1,3 @@
 # Changelog
 
-All notable changes to `juststeveking/laravel-sendstack` will be documented in this file.
+All notable changes to `juststeveking/os-process` will be documented in this file.

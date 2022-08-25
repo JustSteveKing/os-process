@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use JustSteveKing\Laravel\OS\Commands\Abstractions\Git;
-use JustSteveKing\Laravel\OS\Commands\Abstractions\GitCommand;
-use JustSteveKing\Laravel\OS\Commands\Types\Git as SubCommand;
+use JustSteveKing\OS\Commands\Abstractions\Git;
+use JustSteveKing\OS\Commands\Abstractions\GitCommand;
+use JustSteveKing\OS\Commands\Types\Git as SubCommand;
 
 it('can build a git push command', function (string $branch) {
     $git = new Git();

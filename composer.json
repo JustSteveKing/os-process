@@ -1,6 +1,6 @@
 {
-    "name": "juststeveking/laravel-os-process",
-    "description": "A Laravel Package to work with OS processes",
+    "name": "juststeveking/os-process",
+    "description": "A PHP Package to work with OS processes in an OOP way.",
     "license": "MIT",
     "authors": [
         {
@@ -12,24 +12,22 @@
     ],
     "autoload": {
         "psr-4": {
-            "JustSteveKing\\Laravel\\OS\\": "src/"
+            "JustSteveKing\\OS\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JustSteveKing\\Laravel\\OS\\Tests\\": "tests/"
+            "JustSteveKing\\OS\\Tests\\": "tests/"
         }
     },
     "require": {
         "php": "^8.1",
-        "illuminate/contracts": "^9.25",
         "symfony/process": "^6.1"
     },
     "require-dev": {
         "laravel/pint": "^1.1",
-        "nunomaduro/larastan": "^2.1",
-        "orchestra/testbench": "^7.6",
-        "pestphp/pest": "^1.21"
+        "pestphp/pest": "^1.21",
+        "phpstan/phpstan": "^1.8"
     },
     "scripts": {
         "test": "./vendor/bin/pest",
@@ -40,13 +38,6 @@
         "test": "Run the Pest test suite.",
         "pint": "Run Laravel Pint to fix any code style issues.",
         "stan": "Run PHPStan static analysis on the code base."
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "JustSteveKing\\Laravel\\OS\\Providers\\OSProcessServiceProvider"
-            ]
-        }
     },
     "config": {
         "optimize-autoloader": true,

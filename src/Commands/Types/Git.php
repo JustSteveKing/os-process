@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JustSteveKing\Laravel\OS\Commands\Types;
+namespace JustSteveKing\OS\Commands\Types;
 
 enum Git: string
 {
