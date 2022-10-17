@@ -112,3 +112,41 @@ $terraform = new Terraform();
 
 $terraform->apply()->run(); // Will run `terraform apply` in an OS process.
 ```
+
+You can also obtain information about the process
+
+
+```php
+$terraform = new Terraform();
+
+$process = $terraform->apply(); // The process variable contains an instance of Symfony\Component\Process 
+
+$process->run(); // run `terraform apply` in an OS process.
+
+// Obtaining information about the process
+
+$output = $process->getOutput(); // Output of the command
+$error = $process->getErrorOutput(); // Error output
+$commandLine = $process->getCommandLine(); // Obtaining the complete command
+```
+
+Getting real-time Process Output
+
+```php
+$terraform = new Terraform();
+
+$process = $terraform->apply(); // The process variable contains an instance of Symfony\Component\Process 
+
+$process->start(); // start `terraform apply` in an OS process. (start not run)
+
+ $process->wait(function ($type, $buffer) {
+        if (\Symfony\Component\Process\Process::ERR === $type) {
+            echo 'ERR > '.$buffer;
+        } else {
+            echo 'OUT > '.$buffer;
+        }
+    });
+
+```
+
+
